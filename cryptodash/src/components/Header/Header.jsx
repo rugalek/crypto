@@ -26,6 +26,7 @@ export const Header = () => {
   const classes = useStyles();
   const history = useHistory();
   const { currency, setCurrency } = CryptoState();
+
   const darkTheme = createTheme({
     pallete: {
       primary: {
@@ -53,6 +54,8 @@ export const Header = () => {
                 height: 40,
                 marginRight: 15,
               }}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
             >
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"EUR"}>EUR</MenuItem>
