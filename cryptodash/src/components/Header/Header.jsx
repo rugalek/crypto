@@ -59,7 +59,7 @@ export const Header = () => {
             >
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"EUR"}>EUR</MenuItem>
-              <MenuItem value={"BYN"}>BYN</MenuItem>
+              <MenuItem value={"RUB"}>RUB</MenuItem>
             </Select>
           </Toolbar>
         </Container>
