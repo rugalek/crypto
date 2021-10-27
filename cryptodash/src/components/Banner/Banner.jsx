@@ -26,7 +26,7 @@ export const Banner = () => {
   const classes = useStyles();
   return (
     <div className={classes.banner}>
-      <Container classname={classes.bannerContent}>
+      <Container className={classes.bannerContent}>
         <div className={classes.tagline}>
           <Typography
             variant="h2"

@@ -12,12 +12,20 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
   },
+  carouselItem: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    cursor: "pointer",
+    color: "white",
+    textTransform: "uppercase",
+  },
 }));
 export const Carousel = () => {
   const [trending, setTrending] = useState([]);
 
   const classes = useStyles();
-  const { currency } = CryptoState();
+  const { currency, symbol } = CryptoState();
 
   const fetchTrendingCoins = async () => {
     const { data } = await axios.get(TrendingCoins(currency));
@@ -32,6 +40,7 @@ export const Carousel = () => {
   }, [currency]);
 
   const items = trending.map((coin) => {
+    let profit = coin.price_change_percentage_24h >= 0;
     return (
       <Link className={classes.carouselItem} to={`/coins/${coin.id}`}>
         <img
@@ -40,11 +49,32 @@ export const Carousel = () => {
           height="80"
           style={{ marginBottom: 10 }}
         />
-        <span>
-          {coin?.symbol}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            fontSize: 12,
+          }}
+        >
+          <span>
+            {coin?.symbol}
+            &nbsp;
+          </span>
+          <span
+            style={{
+              color: profit ? "green" : "red",
+            }}
+          >
+            {profit && "+"}
+            {coin?.price_change_percentage_24h?.toFixed(2)}
+            {"%"}
+          </span>
+        </div>
+        <span style={{ fontSize: 20, fontWeight: 550 }}>
+          {symbol}
           &nbsp;
+          {coin?.current_price.toFixed(2)}
         </span>
-        <span></span>
       </Link>
     );
   });
@@ -59,7 +89,7 @@ export const Carousel = () => {
   };
 
   return (
-    <div classname={classes.carousel}>
+    <div className={classes.carousel}>
       <AliceCarousel
         mouseTracking
         infinite
