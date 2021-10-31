@@ -17,15 +17,17 @@ import {
   TableHead,
   TableCell,
   TableRow,
+  TableBody,
 } from "@material-ui/core";
-import { ThemeProvider } from "@material-ui/styles";
+import { makeStyles, ThemeProvider } from "@material-ui/styles";
+import { useHistory } from "react-router";
 
 export const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
-
-  const { currency } = CryptoState();
+  const history = useHistory();
+  const { currency, symbol } = CryptoState();
 
   const fetchCoins = async () => {
     setIsLoading(true);
@@ -48,6 +50,26 @@ export const CoinsTable = () => {
       type: "dark",
     },
   });
+
+  const handleSearch = () => {
+    return coins.filter(
+      (coin) =>
+        coin.name.toLowerCase().includes(search) ||
+        coin.symbol.toLowerCase().includes(search)
+    );
+  };
+
+  const useStyles = makeStyles(() => ({
+    row: {
+      backgroundColor: "#16171a",
+      cursor: "pointer",
+      "&:hover": {
+        backgroundColor: "#131111",
+      },
+      fontFamily: "Montserrat",
+    },
+  }));
+  const classes = useStyles();
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -86,6 +108,65 @@ export const CoinsTable = () => {
                   ))}
                 </TableRow>
               </TableHead>
+              <TableBody>
+                {handleSearch().map((row) => {
+                  const profit = row.price_change_percentage_24h > 0;
+
+                  return (
+                    <TableRow
+                      onClick={() => history.push(`/coins/${row.id}`)}
+                      className={classes.row}
+                      key={row.name}
+                    >
+                      <TableCell
+                        component="th"
+                        scope="row"
+                        style={{
+                          display: "flex",
+                          gap: 15,
+                        }}
+                      >
+                        <img
+                          src={row?.image}
+                          alt={row.name}
+                          height="50"
+                          style={{ margin: 10 }}
+                        />
+                        <div
+                          style={{ display: "flex", flexDirection: "column" }}
+                        >
+                          <span
+                            style={{
+                              textTransform: "uppercase",
+                              fontSize: 22,
+                              color: "#FFFFFF",
+                            }}
+                          >
+                            {row.symbol}
+                          </span>
+                          <span style={{ color: "darkgrey" }}>{row.name}</span>
+                        </div>
+                      </TableCell>
+                      <TableCell align="right" style={{ color: "white" }}>
+                        {symbol} {row.current_price.toFixed(2)}
+                      </TableCell>
+                      <TableCell
+                        align="right"
+                        style={{
+                          color: profit ? "green" : "red",
+                          fontWeigth: 500,
+                        }}
+                      >
+                        {profit && "+"}
+                        {row.price_change_percentage_24h.toFixed(2)}%
+                      </TableCell>
+                      <TableCell align="right" style={{ color: "white" }}>
+                        {symbol} {row.market_cap.toString().slice(0, -6)}M
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
             </Table>
           )}
         </TableContainer>
