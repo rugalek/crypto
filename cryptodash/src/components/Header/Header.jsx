@@ -31,7 +31,6 @@ export const Header = () => {
     pallete: {
       primary: {
         main: "#fff",
-        color: "white",
       },
       type: "dark",
     },
