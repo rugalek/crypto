@@ -3,12 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { CryptoState } from "../../CryptoContext";
 import {
-  AppBar,
-  Toolbar,
   Typography,
   Container,
-  Select,
-  MenuItem,
   createTheme,
   TextField,
   TableContainer,
@@ -83,7 +79,10 @@ export const CoinsTable = () => {
         <TextField
           label="Search your cryptocoin..."
           variant="outlined"
-          style={{ marginBottom: "20px", width: "100%" }}
+          style={{
+            marginBottom: "20px",
+            width: "100%",
+          }}
           onChange={(e) => setSearch(e.target.value)}
         ></TextField>
         <TableContainer>
