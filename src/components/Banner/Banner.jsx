@@ -1,10 +1,12 @@
 import { Container, makeStyles, Typography } from "@material-ui/core";
 import { Carousel } from "../Carousel";
+import backgroundCoins from "./background_crypto.jpg";
 
 const useStyles = makeStyles(() => ({
   banner: {
-    backgroundImage: "url(./background_crypto.jpg)",
-    backgroundSize: "auto",
+    backgroundImage: `url(${backgroundCoins}) `,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
   },
   bannerContent: {
     height: "450px",
@@ -12,6 +14,7 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     paddingTop: 25,
     justifyContent: "space-around",
+    backdropFilter: "blur(5px)",
   },
   tagline: {
     display: "flex",
