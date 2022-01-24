@@ -19,18 +19,11 @@ import { makeStyles, ThemeProvider } from "@material-ui/styles";
 import { useHistory } from "react-router";
 
 export const CoinsTable = () => {
-  const [coins, setCoins] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
   const history = useHistory();
-  const { currency, symbol } = CryptoState();
+  const { currency, symbol, coins, isLoading, fetchCoins } = CryptoState();
 
-  const fetchCoins = async () => {
-    setIsLoading(true);
-    const { data } = await axios.get(CoinList(currency));
-    setCoins(data);
-    setIsLoading(false);
-  };
+
 
   console.log(coins);
 

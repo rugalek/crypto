@@ -11,6 +11,7 @@ import { makeStyles, ThemeProvider } from "@material-ui/styles";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { CryptoState } from "../../CryptoContext";
+import AuthModal from "../Authentification/AuthModal";
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -30,7 +31,7 @@ export const Header = () => {
   const darkTheme = createTheme({
     pallete: {
       primary: {
-        main: "#ff",
+        main: "#fff",
       },
       type: "dark",
     },
@@ -54,6 +55,7 @@ export const Header = () => {
                 height: 40,
                 marginRight: 15,
                 color: "white",
+                border: '1px solid white',
               }}
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
@@ -62,6 +64,7 @@ export const Header = () => {
               <MenuItem value={"EUR"}>EUR</MenuItem>
               <MenuItem value={"RUB"}>RUB</MenuItem>
             </Select>
+            <AuthModal/>
           </Toolbar>
         </Container>
       </AppBar>
