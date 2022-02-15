@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/rugalek/crypto/static/css/main.10ab625c.chunk.css",
-    "main.js": "/rugalek/crypto/static/js/main.926a50cf.chunk.js",
-    "main.js.map": "/rugalek/crypto/static/js/main.926a50cf.chunk.js.map",
-    "runtime-main.js": "/rugalek/crypto/static/js/runtime-main.b0fe1deb.js",
-    "runtime-main.js.map": "/rugalek/crypto/static/js/runtime-main.b0fe1deb.js.map",
-    "static/css/2.af3ab7ac.chunk.css": "/rugalek/crypto/static/css/2.af3ab7ac.chunk.css",
-    "static/js/2.0a7864c4.chunk.js": "/rugalek/crypto/static/js/2.0a7864c4.chunk.js",
-    "static/js/2.0a7864c4.chunk.js.map": "/rugalek/crypto/static/js/2.0a7864c4.chunk.js.map",
-    "index.html": "/rugalek/crypto/index.html",
-    "static/css/2.af3ab7ac.chunk.css.map": "/rugalek/crypto/static/css/2.af3ab7ac.chunk.css.map",
-    "static/css/main.10ab625c.chunk.css.map": "/rugalek/crypto/static/css/main.10ab625c.chunk.css.map",
-    "static/js/2.0a7864c4.chunk.js.LICENSE.txt": "/rugalek/crypto/static/js/2.0a7864c4.chunk.js.LICENSE.txt"
+    "main.css": "/crypto/static/css/main.10ab625c.chunk.css",
+    "main.js": "/crypto/static/js/main.85be8737.chunk.js",
+    "main.js.map": "/crypto/static/js/main.85be8737.chunk.js.map",
+    "runtime-main.js": "/crypto/static/js/runtime-main.efa9eba9.js",
+    "runtime-main.js.map": "/crypto/static/js/runtime-main.efa9eba9.js.map",
+    "static/css/2.af3ab7ac.chunk.css": "/crypto/static/css/2.af3ab7ac.chunk.css",
+    "static/js/2.4388de62.chunk.js": "/crypto/static/js/2.4388de62.chunk.js",
+    "static/js/2.4388de62.chunk.js.map": "/crypto/static/js/2.4388de62.chunk.js.map",
+    "index.html": "/crypto/index.html",
+    "static/css/2.af3ab7ac.chunk.css.map": "/crypto/static/css/2.af3ab7ac.chunk.css.map",
+    "static/css/main.10ab625c.chunk.css.map": "/crypto/static/css/main.10ab625c.chunk.css.map",
+    "static/js/2.4388de62.chunk.js.LICENSE.txt": "/crypto/static/js/2.4388de62.chunk.js.LICENSE.txt",
+    "static/media/background_crypto.f433aed2.jpg": "/crypto/static/media/background_crypto.f433aed2.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b0fe1deb.js",
+    "static/js/runtime-main.efa9eba9.js",
     "static/css/2.af3ab7ac.chunk.css",
-    "static/js/2.0a7864c4.chunk.js",
+    "static/js/2.4388de62.chunk.js",
     "static/css/main.10ab625c.chunk.css",
-    "static/js/main.926a50cf.chunk.js"
+    "static/js/main.85be8737.chunk.js"
   ]
 }
