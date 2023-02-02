@@ -39,7 +39,7 @@ export const CoinsTable = () => {
   }, [currency]);
 
   const darkTheme = createTheme({
-    pallete: {
+    palette: {
       primary: {
         main: "#fff",
       },
