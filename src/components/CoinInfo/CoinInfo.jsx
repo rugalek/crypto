@@ -29,7 +29,7 @@ export const CoinInfo = ({ coin }) => {
   }, [currency, days]);
 
   const darkTheme = createTheme({
-    pallete: {
+    palette: {
       primary: {
         main: "#fff",
       },

@@ -6,8 +6,9 @@ import {
   Select,
   MenuItem,
   createTheme,
+  ThemeProvider,
+  makeStyles
 } from "@material-ui/core";
-import { makeStyles, ThemeProvider } from "@material-ui/styles";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { CryptoState } from "../../CryptoContext";
@@ -21,6 +22,11 @@ const useStyles = makeStyles(() => ({
     fontWeight: "bold",
     cursor: "pointer",
   },
+  select: {
+    width: '100px',
+    height: '30px',
+    marginRight: '15px',
+  }
 }));
 
 export const Header = () => {
@@ -29,7 +35,7 @@ export const Header = () => {
   const { currency, setCurrency } = CryptoState();
 
   const darkTheme = createTheme({
-    pallete: {
+    palette: {
       primary: {
         main: "#fff",
       },
@@ -50,13 +56,7 @@ export const Header = () => {
             </Typography>
             <Select
               variant="outlined"
-              style={{
-                width: 100,
-                height: 40,
-                marginRight: 15,
-                color: "white",
-                border: '1px solid white',
-              }}
+              className={classes.select}
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
             >
